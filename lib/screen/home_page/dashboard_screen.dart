@@ -19,6 +19,7 @@ class DashBoard extends HookConsumerWidget {
     final searchController = useTextEditingController();
 
     return Scaffold(
+
       appBar: AppBar(
         elevation: 1,
         title: Text("Pleasure In Vegas",style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w400,fontFamily: MerriWeather),),
@@ -406,6 +407,25 @@ class DashBoard extends HookConsumerWidget {
               SizedBox(height: 40.h,),
 
             ],
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterDocked
+      ,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(bottom: 40),
+        child: SizedBox(
+          height: 80,
+          width: 80,
+          child: FittedBox(
+            child: FloatingActionButton(
+              onPressed: () {  },
+              backgroundColor: appAmberLight,
+
+              child: Icon(Icons.mic,color: white,),
+
+
+            ),
           ),
         ),
       ),
