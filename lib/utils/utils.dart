@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pleasure_in_vegas/utils/color_utils.dart';
 import 'package:pleasure_in_vegas/utils/strings.dart';
 
 
@@ -101,7 +103,7 @@ class Utils {
       text,
       style: TextStyle(
         fontFamily: MerriWeather,
-        color: textColor ?? Colors.black,
+        color: textColor ?? black,
         fontSize: textSize ?? 14,
         fontWeight: FontWeight.w400,
       ),
@@ -116,7 +118,7 @@ class Utils {
         fontFamily: 'DMSans',
         fontSize: textSize ?? 20,
         fontWeight: FontWeight.w800,
-        color: color ?? Colors.black,
+        color: color ?? black,
       ),
     );
   }
@@ -126,9 +128,9 @@ class Utils {
     return Text(
       text,
       style: TextStyle(
-        fontFamily: 'DMSans',
-        color: textColor ?? Colors.black,
-        fontSize: textSize ?? 16,
+        fontFamily: MerriWeather,
+        color: textColor ?? black,
+        fontSize: textSize ?? 16.sp,
         fontWeight: FontWeight.w600,
       ),
     );
@@ -142,9 +144,9 @@ class Utils {
     return Text(
       text,
       style: TextStyle(
-        fontFamily: 'DMSans',
-        color: textColor ?? Colors.black,
-        fontSize: textSize ?? 14,
+        fontFamily: MerriWeather,
+        color: textColor ?? black,
+        fontSize: textSize ?? 14.sp,
         fontWeight: FontWeight.w400,
       ),
       textAlign: textAlign,
@@ -156,7 +158,7 @@ class Utils {
     return Text(
       text,
       style: TextStyle(
-        fontFamily: 'DMSans',
+        fontFamily: MerriWeather,
         fontSize: textSize ?? 20,
         fontWeight: FontWeight.w800,
         color: color ?? Colors.black,
@@ -172,7 +174,7 @@ class Utils {
         overflow: TextOverflow.ellipsis,
         fontFamily: MerriWeather,
         color: textColor ?? Colors.black,
-        fontSize: textSize ?? 16,
+        fontSize: textSize ?? 16.sp,
         fontWeight: FontWeight.w600,
       ),
     );
@@ -184,9 +186,9 @@ class Utils {
       text,
       style: TextStyle(
         fontFamily: MerriWeather,
-        color: textColor ?? Colors.black,
+        color: textColor ?? black,
         fontSize: textSize ?? 14,
-        fontWeight: FontWeight.w400,
+        fontWeight: FontWeight.bold,
       ),
     );
   }

@@ -62,9 +62,6 @@
 //   }
 // }
 
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
@@ -85,7 +82,7 @@ class CustomTextfeild extends HookWidget {
     this.prefix,
     this.containercolor,
     this.textStyle,
-    this.border,
+    this.inputBorder,
     this.fillcolor,
     this.hintStyle,
     this.maxLines,
@@ -97,6 +94,7 @@ class CustomTextfeild extends HookWidget {
     this.width,
     this.enabled,
     this.boxShadow,
+    this.isBoxShadow,
     required this.textCapitalization,
     this.suffixText,
     bool? isObscure,
@@ -113,7 +111,7 @@ class CustomTextfeild extends HookWidget {
   final bool? isPasswordField;
   final TextInputType? textInputType;
   final Function(String)? onFieldSubmitted;
-  final InputBorder? border;
+  final InputBorder? inputBorder;
   final Color? fillcolor;
   final Color? containercolor;
   final Widget? prefix;
@@ -126,6 +124,7 @@ class CustomTextfeild extends HookWidget {
   final EdgeInsetsGeometry? contentPadding;
   final BorderRadiusGeometry? borderRadius;
   final bool? enabled;
+  final bool? isBoxShadow;
   final TextCapitalization textCapitalization;
   // final Color? gradientone;
   // final Color? gradienttwo;
@@ -137,10 +136,22 @@ class CustomTextfeild extends HookWidget {
       width: width,
       decoration: BoxDecoration(
         borderRadius: borderRadius,
-
         color: containercolor,
         border: containerborder,
-        boxShadow: boxShadow,
+        boxShadow: isBoxShadow == true ? [
+          BoxShadow(
+            color: Colors.black26,
+            blurRadius: 5,
+            // spreadRadius: 0.5,
+            offset: Offset(2, 2),
+          ),
+          BoxShadow(
+            color: Colors.white10,
+            blurRadius: 5,
+            // spreadRadius: 0.5,
+            offset: Offset(-2, -2),
+          ),
+        ] : boxShadow,
         gradient: gradient,
       ),
       child: TextFormField(
@@ -172,5 +183,3 @@ class CustomTextfeild extends HookWidget {
     );
   }
 }
-
-

@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:gap/gap.dart';
+import 'package:pleasure_in_vegas/utils/color_utils.dart';
 import 'package:pleasure_in_vegas/utils/extensions/size_extension.dart';
 
 import 'constants/fontsize_constant.dart';
@@ -12,8 +13,8 @@ Future<bool?> displayToast(String message) {
       toastLength: Toast.LENGTH_LONG,
       gravity: ToastGravity.BOTTOM,
       timeInSecForIosWeb: 2,
-      backgroundColor: Colors.black,
-      textColor: Colors.white,
+      backgroundColor: primaryColor,
+      textColor: white,
       fontSize: fontSize14);
 }
 

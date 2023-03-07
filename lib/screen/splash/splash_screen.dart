@@ -3,9 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:pleasure_in_vegas/di/locator.dart';
-import 'package:pleasure_in_vegas/screen/home_page/dashboard_screen.dart';
+
 import 'package:pleasure_in_vegas/utils/constants/navigation_route_constants.dart';
+import 'package:pleasure_in_vegas/utils/constants/preference_key_constant.dart';
 import 'package:pleasure_in_vegas/utils/image_utils.dart';
+import 'package:pleasure_in_vegas/utils/preference_utils.dart';
 import 'package:pleasure_in_vegas/utils/utils.dart';
 
 
@@ -17,15 +19,18 @@ class SplashScreen extends HookWidget {
     useEffect(
           () {
         final timer = Timer(const Duration(seconds: 2), () async {
-          // if (getString(userId) == '') {
 
-           navigationService.pushAndRemoveUntil(routeIntroScreen);
+           if (getBool(prefUserLogIn) == true) {
 
-           // Navigator.push(context, MaterialPageRoute(builder: (context) => DashBoard() ));
+           navigationService.pushAndRemoveUntil(routeDashBoard
+           );
 
-          // } else {
-          //   navigationService.pushReplacement(routeHome);
-          // }
+
+
+
+           } else {
+             navigationService.pushReplacement(routeIntroScreen);
+           }
         });
         return timer.cancel;
       },
@@ -45,7 +50,7 @@ class SplashScreen extends HookWidget {
           //   // borderRadius: BorderRadius.circular(300.r)
           // ),
         child: Center(
-          child: Image.asset(foodIcon,scale: 0.5,),
+          child: Image.asset(icLogo ,scale: 3,),
         ),
       ),
     );

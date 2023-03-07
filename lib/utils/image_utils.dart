@@ -39,7 +39,7 @@ const String rectangleIcon = 'assets/images/rectangle.png';
 ///       New Project Proptukda
 
 const String  splashBG = "assets/photos/splashBG.png";
-const String  icLogo = "assets/photos/icLogoProptukda.png";
+const String  icLogo = "assets/images/vegaslogo.png";
 const String  introOne = "assets/photos/introOne.png";
 const String  introTwo = "assets/photos/introTwo.png";
 const String  introThree = "assets/photos/introThree.png";

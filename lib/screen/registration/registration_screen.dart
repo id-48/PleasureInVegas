@@ -119,8 +119,9 @@ class RegistrationScreen extends HookConsumerWidget {
                   height: 18.h,
                 ),
                 CustomButton(
-                  height: 50.h,
-                  width: 278.w,
+                  radius: 0,
+                  // height: 50.h,
+                  // width: 278.w,
                   onPressed: (){
                    // navigationService.push(routeVerificationScreen);
                   },

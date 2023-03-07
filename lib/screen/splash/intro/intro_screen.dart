@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_'
+    'screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:pleasure_in_vegas/di/locator.dart';
-import 'package:pleasure_in_vegas/screen/auth_model/sign_in_screen.dart';
+
 import 'package:pleasure_in_vegas/screen/splash/intro/intro_modal.dart';
 import 'package:pleasure_in_vegas/utils/color_utils.dart';
+import 'package:pleasure_in_vegas/utils/constants/navigation_route_constants.dart';
 import 'package:pleasure_in_vegas/utils/image_utils.dart';
 import 'package:pleasure_in_vegas/widgets/custom_button.dart';
 
@@ -31,7 +33,7 @@ class IntroScreen extends HookConsumerWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: currentIndex.value == index
-              ? appColor
+              ? primaryColor
               : greyColor,
         ),
       );
@@ -67,12 +69,12 @@ class IntroScreen extends HookConsumerWidget {
       body: Container(
         decoration: const BoxDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://mobimg.b-cdn.net/v3/fetch/7d/7dbb6a6032f98449a78d1069bbf5085d.jpeg?w=300"),scale: 4,fit: BoxFit.fill
+              image: NetworkImage("https://images.unsplash.com/photo-1609174034566-3248c76e41f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80"),scale: 4,fit: BoxFit.fill
             )
         ),
         child: Container(
           // padding: EdgeInsets.symmetric(horizontal: 28.h),
-          color: Colors.black38,
+          color: Colors.black54,
           child: Column(
             // crossAxisAlignment: CrossAxisAlignment.center,
             // mainAxisAlignment: MainAxisAlignment.end,
@@ -123,7 +125,7 @@ class IntroScreen extends HookConsumerWidget {
 
                               SizedBox(height: 40.h,),
 
-                              Image.asset(foodIcon, scale: 1),
+                              Image.asset(icLogo, scale: 5),
 
                             ],
                           )
@@ -162,45 +164,54 @@ class IntroScreen extends HookConsumerWidget {
 
                      SizedBox(height: 60.h,),
 
-                     Row(
-                       children: [
-                         SizedBox(width: 22.w,),
-                         currentIndex.value == 3
-                             ? const SizedBox()
-                             : CustomButton(
-                           title: 'SKIP',
-                           height: 40.h,
-                           width: 100.w,
-                           border: Border.all(color: appAmber),
-                           textColor: black,
-                           borderradius: BorderRadius.circular(7),
-                           onPressed: (){
-                             controller.value.jumpToPage(3);
+                     Padding(
+                       padding: const EdgeInsets.symmetric(horizontal: 20),
+                       child: Row(
+                         children: [
 
-                           },
-                         ),
-                         const Spacer(),
-                         CustomButton(
-                           title: currentIndex.value == 3 ? "Got It" : 'NEXT',
-                           height: 40.h,
-                           width: 100.w,
-                           // border: Border.all(color: appAmber),
-                           color: appAmber,
-                           textColor: white,
-                           borderradius: BorderRadius.circular(7),
-                           onPressed: (){
-                             if(currentIndex.value < 3) {
-                               controller.value.jumpToPage(currentIndex.value + 1);
-                             }else {
-                               selectedType(context,ref);
+                           currentIndex.value == 3
+                               ? const Spacer()
+                               : Expanded(
+                                 child: CustomButton(
+                             title: 'SKIP',
+                             color: white,
+                             // height: 40.h,
+                             // width: 100.w,
+                             border: Border.all(color: primaryColor),
+                             textColor: black,
+                                   radius: 8,
+                             onPressed: (){
+                                 controller.value.jumpToPage(3);
 
-                               // Navigator.push(context, MaterialPageRoute(builder: (context)  => SplashScreen()));
-                               // navigationService.push(routeWelCome);
-                             }
-                           },
-                         ),
-                         SizedBox(width: 22.w,),
-                       ],
+                             },
+                           ),
+                               ),
+                           const Spacer(),
+                           Expanded(
+                             child: CustomButton(
+                               title: currentIndex.value == 3 ? "Got It" : 'NEXT',
+                               // height: 40.h,
+                               // width: 100.w,
+                               // border: Border.all(color: appAmber),
+                               color: primaryColor,
+                               textColor: white,
+                               radius: 8,
+
+                               onPressed: (){
+                                 if(currentIndex.value < 3) {
+                                   controller.value.jumpToPage(currentIndex.value + 1);
+                                 }else {
+                                   selectedType(context,ref);
+
+                                   // Navigator.push(context, MaterialPageRoute(builder: (context)  => SplashScreen()));
+                                   // navigationService.push(routeWelCome);
+                                 }
+                               },
+                             ),
+                           ),
+
+                         ],
+                       ),
                      ),
 
                      SizedBox(height: 50.h,),
@@ -238,7 +249,7 @@ class IntroScreen extends HookConsumerWidget {
                     shape: BoxShape.circle,
                     border: Border.all(color: black)
                   ),
-                          child: const Center(child: Icon(Icons.close,color: appAmber,size: 30,)
+                          child: const Center(child: Icon(Icons.close,color: primaryColor,size: 30,)
                           )
                   )
                 ),
@@ -249,14 +260,15 @@ class IntroScreen extends HookConsumerWidget {
 
                 CustomButton(
                   title: 'PLEASE SELECT USER',
-                  height: 40.h,
-                  width: double.infinity,
+
+                  // height: 40.h,
+                  // width: double.infinity,
                   // border: Border.all(color: appAmber),
-                  textColor: black,
-                  color: appAmber,
-                  borderradius: BorderRadius.circular(5),
+                  textColor: white,
+                  color: primaryColor,
+                  radius: 5,
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn() ));
+                    navigationService.push(routeSignIn);
 
                   },
                 ),
@@ -266,14 +278,14 @@ class IntroScreen extends HookConsumerWidget {
 
                 CustomButton(
                   title: 'PLEASE SELECT AGENT',
-                  height: 40.h,
-                  width: double.infinity,
-                  // border: Border.all(color: appAmber),
-                 color: appAmber,
-                  textColor: black,
-                  borderradius: BorderRadius.circular(5),
+                  // height: 40.h,
+                  // width: double.infinity,
+
+                 color: primaryColor,
+                  textColor: white,
+                  radius: 5,
                   onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => SignIn() ));
+                    navigationService.push(routeSignIn);
                   },
                 ),
 

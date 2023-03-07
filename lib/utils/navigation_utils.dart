@@ -1,6 +1,20 @@
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:pleasure_in_vegas/screen/auth/sign_in/sign_in_screen.dart';
+import 'package:pleasure_in_vegas/screen/auth/sign_up/sign_up_screen.dart';
+
+import 'package:pleasure_in_vegas/screen/home/cart/cart_screen.dart';
+import 'package:pleasure_in_vegas/screen/home/componet/hotel_info_sheet.dart';
+import 'package:pleasure_in_vegas/screen/home/componet/hotel_search_sheet.dart';
+import 'package:pleasure_in_vegas/screen/home/hotel/componet/filter_screen.dart';
+import 'package:pleasure_in_vegas/screen/home/hotel/hotel_booking_screen.dart';
+import 'package:pleasure_in_vegas/screen/home/hotel/hotel_detail_screen.dart';
+import 'package:pleasure_in_vegas/screen/home/hotel/hotel_list_screen.dart';
+import 'package:pleasure_in_vegas/screen/home/hotel/search_hotels_screen.dart';
+import 'package:pleasure_in_vegas/screen/home/dash_board/dashboard_screen.dart';
+
+
 import 'package:pleasure_in_vegas/screen/splash/intro/intro_screen.dart';
 import 'package:pleasure_in_vegas/screen/splash/splash_screen.dart';
 import 'constants/navigation_route_constants.dart';
@@ -45,34 +59,64 @@ class NavigationUtils {
         return CustomRoute(
             settings: const RouteSettings(name: routeIntroScreen),
             builder: (_) =>   const IntroScreen());
-      // case routeRegistrationScreen:
-      //   return CustomRoute(
-      //       settings: const RouteSettings(name: routeRegistrationScreen),
-      //       builder: (_) =>   const RegistrationScreen());
-      // case routeWelCome:
-      //   return CustomRoute(
-      //       settings: const RouteSettings(name: routeWelCome),
-      //       builder: (_) =>   const WelCome());
-      // case routeSignUpScreen:
-      //   return CustomRoute(
-      //       settings: const RouteSettings(name: routeSignUpScreen),
-      //       builder: (_) =>   const SignUpScreen());
-      // case routeLoginScreen:
-      //   return CustomRoute(
-      //       settings: const RouteSettings(name: routeLoginScreen),
-      //       builder: (_) =>   const LogInScreen());
-      // case routeHomeScreen:
-      //   return CustomRoute(
-      //       settings: const RouteSettings(name: routeHomeScreen),
-      //       builder: (_) =>   const HomeScreen());
-      // case routeExchangeScreen:
-      //   return CustomRoute(
-      //       settings: const RouteSettings(name: routeExchangeScreen),
-      //       builder: (_) =>   const ExchangeScreen());
-      // case routeNewsScreen:
-      //   return CustomRoute(
-      //       settings: const RouteSettings(name: routeNewsScreen),
-      //       builder: (_) =>   const NewsScreen());
+      case routeHotelSearchSheet:
+        return CustomRoute(
+            settings: const RouteSettings(name: routeRegistrationScreen),
+            builder: (_) =>   const HotelSearchSheet());
+
+      case routeDashBoard:
+        return CustomRoute(
+            settings: const RouteSettings(name: routeDashBoard),
+            builder: (_) =>   const DashBoard());
+
+      case routeSearchHotelScreen:
+        return CustomRoute(
+            settings: const RouteSettings(name: routeSearchHotelScreen),
+            builder: (_) =>   const SearchHotelScreen());
+
+
+      case routeHotelListScreen:
+        return CustomRoute(
+            settings: const RouteSettings(name: routeHotelListScreen),
+            builder: (_) =>   const HotelListScreen());
+
+      case routeHotelDetailScreen:
+        return CustomRoute(
+            settings: const RouteSettings(name: routeHotelDetailScreen),
+            builder: (_) =>   const HotelDetailScreen());
+
+
+      case routeSignIn:
+        return CustomRoute(
+            settings: const RouteSettings(name: routeSignIn),
+            builder: (_) =>    SignIn());
+
+      case routeFilterScreen:
+        return CustomRoute(
+            settings: const RouteSettings(name: routeFilterScreen),
+            builder: (_) =>     FilterScreen());
+
+      case routeCartScreen:
+        return CustomRoute(
+            settings: const RouteSettings(name: routeCartScreen),
+            builder: (_) =>     CartScreen());
+
+      case routeHotelInfoScreen:
+        return CustomRoute(
+            settings: const RouteSettings(name: routeHotelInfoScreen),
+            builder: (_) =>   const HotelInfoSheet());
+
+      case routeHotelBookingScreen:
+        return CustomRoute(
+            settings: const RouteSettings(name: routeHotelBookingScreen),
+            builder: (_) =>   const HotelBookingScreen());
+      case routeSignUpScreen:
+        return CustomRoute(
+            settings: const RouteSettings(name: routeSignUpScreen),
+            builder: (_) =>   const SignUpScreen());
+
+
+
 
 
       default:

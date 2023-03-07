@@ -18,8 +18,10 @@ const Color blueShadowColor = Color(0xFFDFF4FF);
 
 const Color appColor = Color(0xff5B023E);
 const Color greyColor = Color(0xff9D9D9D);
-const Color appAmber = Color(0xffF8B400);
+// const Color appAmber = Color(0xffF8B400);
 const Color appAmberLight = Color(0xffE9CB39);
+// const Color primaryColor= Color(0xffE9CB39);
+const Color primaryColor= Color(0xffF88d2f);
 // const Color appAmber
 const Color appAmberMedium = Color(0xffF9CD00);
 const Color silver = Color(0xff929AAB);
@@ -77,7 +79,7 @@ const Color disableColor = Color(0xFFB6BECC);
 
 
 
-const Color primaryColor = Color(0xFFF5F5F5);
+// const Color primaryColor = Color(0xFFF5F5F5);
 const Color bgTextFieldColor = Color(0xFFFFFFFF);
 const Color labelColor = Color(0xFF9B9B9B);
 const Color btnColor = Color(0xFFDB3022);
